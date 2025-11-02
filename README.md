@@ -111,10 +111,4 @@ Frontend Developer — React | JavaScript
 
 ---
 
-## 🪪 License
-
-**MIT License** — free to use and modify with attribution.
-
----
-
 **🌳 Visualize your JSON easily and efficiently!**
