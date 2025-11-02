@@ -1,76 +1,120 @@
-# React + TypeScript + Vite
+# 🌳 JSON Tree Visualizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive tool to visualize any JSON as a dynamic, searchable tree using **React**, **React Flow**, and **Tailwind CSS v4**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📂 Folder Structure
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```
+src/
+├── components/
+│   ├── Layout.jsx
+│   ├── InputSection.jsx
+│   ├── Tree.jsx
+│   ├── SearchFilter.jsx
+│
+├── utils/
+│   ├── jsonToFlow.js
+│   ├── searchNode.js
+│
+├── main.jsx
+└── index.css
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+## ⚙️ Installation
 
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-
-
-# JSON-Tree-Visualizer
+```bash
+git clone https://github.com/ManSOorcode/json-tree-visualizer.git
+cd json-tree-visualizer
+npm install
+npm run dev
 ```
+
+Then open your browser and go to:
+
+```
+http://localhost:5173/
+```
+
+---
+
+## 🧠 How It Works
+
+- **`jsonToFlow.js`** → Converts JSON data into nodes and edges for React Flow.
+- **`searchNode.js`** → Finds nodes based on JSONPath-like syntax.
+- **`Tree.jsx`** → Displays JSON as a tree and automatically focuses on searched nodes.
+
+---
+
+## 🧪 Example
+
+### Input JSON
+
+```json
+{
+  "company": {
+    "name": "NextGen Devs",
+    "departments": [
+      { "name": "Engineering", "employees": 25 },
+      { "name": "Marketing", "employees": 10 }
+    ],
+    "location": {
+      "country": "India",
+      "city": "Pune"
+    }
+  }
+}
+```
+
+### Search Query
+
+```
+$.company.location.city
+```
+
+### Result
+
+- The tree visualization is generated.
+- The node with value `"Pune"` is highlighted and centered.
+
+---
+
+## ⚠️ Limitations
+
+- Works only with **valid JSON**.
+- Supports **basic JSONPath** (`$.key.subkey`, `$[0].key`).
+- Does **not** support wildcards or filters (`$..key`, `?()` yet).
+- Large JSONs are truncated at **400 nodes** for performance.
+
+---
+
+## 🧭 Roadmap
+
+- [ ] Wildcard search (`$..key`)
+- [ ] Collapsible nodes
+- [ ] Export as PNG/PDF
+- [ ] Real-time JSON validation
+- [ ] Improved auto layout
+
+---
+
+## 🧑‍💻 Author
+
+**Mansoor Khan**  
+Frontend Developer — React | JavaScript | UI/UX Design  
+📧 [mansoor@example.com](mailto:mansoor@example.com)  
+🔗 [Live Demo](https://json-tree-visualizer-pro.vercel.app/)  
+💻 [GitHub Repo](https://github.com/ManSOorcode/json-tree-visualizer)
+
+---
+
+## 🪪 License
+
+**MIT License** — free to use and modify with attribution.
+
+---
+
+**🌳 Visualize your JSON easily and efficiently!**
