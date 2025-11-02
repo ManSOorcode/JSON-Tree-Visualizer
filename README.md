@@ -104,8 +104,8 @@ $.company.location.city
 ## 🧑‍💻 Author
 
 **Mansoor Khan**  
-Frontend Developer — React | JavaScript | UI/UX Design  
-📧 [mansoor@example.com](mailto:mansoor@example.com)  
+Frontend Developer — React | JavaScript  
+📧 [mansoor4tech@gmail.com.com](mailto:mansoor4tech@gmail.com)  
 🔗 [Live Demo](https://json-tree-visualizer-pro.vercel.app/)  
 💻 [GitHub Repo](https://github.com/ManSOorcode/json-tree-visualizer)
 
