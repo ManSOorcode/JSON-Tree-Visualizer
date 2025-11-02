@@ -105,7 +105,7 @@ $.company.location.city
 
 **Mansoor Khan**  
 Frontend Developer — React | JavaScript  
-📧 [mansoor4tech@gmail.com.com](mailto:mansoor4tech@gmail.com)  
+📧 [mansoor4tech@gmail.com](mailto:mansoor4tech@gmail.com)  
 🔗 [Live Demo](https://json-tree-visualizer-pro.vercel.app/)  
 💻 [GitHub Repo](https://github.com/ManSOorcode/json-tree-visualizer)
 
